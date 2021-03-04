@@ -2,7 +2,6 @@
     background-color: $color-secondary;
     grid-column: col-start 7 / full-end;
     padding: 3rem;
-
     display: grid;
     align-content: center;
     justify-content: center;
@@ -15,6 +14,14 @@
         column-gap: 2rem;
         row-gap: 5vh;
         align-items: center;
+
+        @media only screen and (max-width: $bp-meduim) {
+            grid-template-columns: repeat(3, min-content max-content);
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            grid-template-columns: min-content max-content;
+        }
     }
     &__img {
         width: 7rem;
@@ -26,4 +33,8 @@
         color: $color-grey-light-2;
         margin-top: -3px;
     }
+    @media only screen and (max-width: $bp-meduim) {
+        grid-column: 1/-1;
+    }
+   
 }
